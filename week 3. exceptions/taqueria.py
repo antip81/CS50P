@@ -35,6 +35,8 @@ def order_placement():
                 print("Total: $%.2f" %summ)
         # break if ctrl+d detected
         except EOFError:
+            # new line after ctrl+d
+            print("")
             break
 
 
