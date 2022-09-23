@@ -15,8 +15,6 @@ def main():
 
 
 def is_valid(s):
-    letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    numbers = "0123456789"
     char = ""
     num_in_vanity = False
 
@@ -29,20 +27,20 @@ def is_valid(s):
         return False
 
     # check for first two vanity characters - should be two letters
-    if s[0] not in letters or s[1] not in letters:
+    if s[0].isnumeric() or s[1].isnumeric():
         return False
 
     # remaining checks
     for char in s:
         # check if the first number equal to zero
-        if char in numbers:
+        if char.isnumeric():
             if int(char) == 0 and not num_in_vanity:
                 return False
             # assign Tue to bool = we have number in vanity
             else:
                 num_in_vanity = True
         # check if there is no letters after a number
-        if char in letters and num_in_vanity:
+        if char.isalpha() and num_in_vanity:
             return False
     else:
         return True
