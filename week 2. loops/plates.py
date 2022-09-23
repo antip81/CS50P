@@ -14,7 +14,7 @@ def main():
         print("Invalid")
 
 
-def is_valid(s):
+def is_valid(s: str) -> bool:
     char = ""
     num_in_vanity = False
 
@@ -23,11 +23,9 @@ def is_valid(s):
         return False
 
     # check for len in between 2 and 6
-    if len(s) < 2 or len(s) > 6:
-        return False
-
     # check for first two vanity characters - should be two letters
-    if s[0].isnumeric() or s[1].isnumeric():
+
+    if len(s) < 2 or len(s) > 6 or s[0].isnumeric() or s[1].isnumeric():
         return False
 
     # remaining checks
