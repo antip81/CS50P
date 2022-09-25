@@ -10,10 +10,10 @@ def main():
     # with revers order of items in each element
     # i.e. "APPLE 5" will be printed as "5 APPLE"
     for item in grocery_list():
-        # makes j list with two items based on space separator
-        j = item.split(" ")
-        # prints the second element of j list then " " and finally prints the first element of j list
-        print("".join(j[1]) + " " + "".join(j[0]))
+        # takes last character in the string witch is amount
+        # then " " then remaining string.
+        # if an amount >=10 - will work incorrectly
+        print("".join(item[-1:]) + " " + "".join(item[0:len(item) - 2]))
 
 def grocery_list() -> list:
     # dictionary {item: amount of items}
@@ -57,7 +57,7 @@ def grocery_list() -> list:
     grocery_dictlist.sort()
 
     # debug
-    print("grocery_dictlist ", grocery_dictlist)
+    # print("grocery_dictlist ", grocery_dictlist)
     return grocery_dictlist
 
 
