@@ -13,7 +13,6 @@ def main():
         except EOFError:
             print()
             break
-    print(grocery_list)
 
     # for each item in sorted dict
     # print value and key
