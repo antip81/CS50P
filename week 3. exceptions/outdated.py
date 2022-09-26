@@ -1,6 +1,7 @@
 # outdated problem set for CS50P
 # https://cs50.harvard.edu/python/2022/psets/3/outdated/
 
+
 def main():
     # call date converter function witch returns a list in format M D YYYYY
     x = date_converter()
@@ -9,6 +10,7 @@ def main():
 
 
 def date_converter() -> list:
+    # TODO remove dict and use list.index instead
     months = {
         "January": 1,
         "February": 2,
@@ -38,6 +40,7 @@ def date_converter() -> list:
                     # if so, replaces Month with month equivalent number
                     date_list[0] = months.get(date_list[0])
                     return date_list
+
             # cheks if the string first symbol in numeric and string has two "/"
             elif date[0].isdecimal() and date.count("/") == 2:
                 # splits string into a list
