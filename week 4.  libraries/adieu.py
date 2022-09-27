@@ -9,6 +9,7 @@
 # Adieu, adieu, to Liesl, Friedrich, Louisa, Kurt, Brigitta, Marta, and Gretl
 
 def main():
+    import inflect
     names: list[str] = []
 
     # makes a list of names til ctrl+d is pressed
@@ -18,27 +19,9 @@ def main():
         except EOFError:
             break
 
-    adieu_print(names)
-
-
-def adieu_print(names: list):
-    curr = ""
-
-    # makes a string of names
-    # if list[index] is the "last index - 1" -> separator = " and "
-    # if list[index] is the "last index" -> no separator needed
-    # else -> separator = ", "
-    for k in range(0, int(len(names))):
-        if k == int(len(names) - 2):
-            separator = " and "
-            curr = curr + "".join(names[k] + separator)
-        elif k == int(len(names) - 1):
-            curr = curr + "".join(names[k])
-        else:
-            separator = ", "
-            curr = curr + "".join(names[k] + separator)
-
-    print("Adieu, adieu, to " + curr)
+    # uses iflect join method to make a string
+    p = inflect.engine()
+    print("Adieu, adieu, to " + p.join((names)))
 
 
 if __name__ == '__main__':
