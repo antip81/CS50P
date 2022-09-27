@@ -10,13 +10,8 @@ def main():
     import random
     # asks for level in function get_number
     lvl: int = get_number("Level :")
-
-    # make an exception for a case when lvl =1 - randrage cannot work with range 1:1
-    if lvl != 1:
-        prize: int = random.randrange(1, lvl)
-    else:
-        prize = 1
-
+    # sets random prize number in range of 1:lvl
+    prize: int = random.randint(1, lvl)
     guess: int = 0
 
     while guess != prize:
