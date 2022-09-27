@@ -9,14 +9,12 @@
 # Adieu, adieu, to Liesl, Friedrich, Louisa, Kurt, Brigitta, Marta, and Gretl
 
 def main():
-    i = 0
-    names = []
+    names: list[str] = []
 
     # makes a list of names til ctrl+d is pressed
     while True:
         try:
             names.append(input("Name: "))
-            i += 1
         except EOFError:
             break
 
