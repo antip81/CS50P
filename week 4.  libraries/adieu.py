@@ -12,6 +12,7 @@ def main():
     i = 0
     names = []
 
+    # makes a list of names til ctrl+d is pressed
     while True:
         try:
             names.append(input("Name: "))
@@ -25,6 +26,10 @@ def main():
 def adieu_print(names: list):
     curr = ""
 
+    # makes a string of names
+    # if list[index] is the "last index - 1" -> separator = " and "
+    # if list[index] is the "last index" -> no separator needed
+    # else -> separator = ", "
     for k in range(0, int(len(names))):
         if k == int(len(names) - 2):
             separator = " and "
@@ -32,12 +37,8 @@ def adieu_print(names: list):
         elif k == int(len(names) - 1):
             curr = curr + "".join(names[k])
         else:
-            if k == 0:
-                separator = ", "
-                curr = names[k] + separator
-            else:
-                separator = ", "
-                curr = curr + "".join(names[k] + separator)
+            separator = ", "
+            curr = curr + "".join(names[k] + separator)
 
     print("Adieu, adieu, to " + curr)
 
