@@ -5,22 +5,23 @@ import random
 
 def main():
     lvl = get_level()
-    errors:int = 0
+    errors: int = 0
 
     for i in range(1, 11):
-        num1 = generate_integer(lvl)
-        num2 = generate_integer(lvl)
+        num1: int = generate_integer(lvl)
+        num2: int = generate_integer(lvl)
         for j in range(1, 4):
-            result = input(str(num1) + " + " + str(num2) + " = ")
+            result: int = int(input(str(num1) + " + " + str(num2) + " = "))
             if result != num1 + num2 and j != 3:
                 print("EEE")
-                pass
             elif result == num1 + num2:
                 break
             elif j == 3:
+                print(f"{num1} + {num2} = {num1 + num2}")
                 errors += 1
-                break
-    print("errors = ", errors)
+
+    print("Score", 10 - errors)
+
 
 
 def get_level() -> int:
