@@ -24,7 +24,6 @@ def is_valid(s: str) -> bool:
 
     # check for len in between 2 and 6
     # check for first two vanity characters - should be two letters
-
     if len(s) < 2 or len(s) > 6 or s[0].isnumeric() or s[1].isnumeric():
         return False
 
