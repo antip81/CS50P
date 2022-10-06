@@ -44,4 +44,5 @@ def is_valid(s: str) -> bool:
         return True
 
 
-main()
+if __name__ == '__main__':
+    main()
